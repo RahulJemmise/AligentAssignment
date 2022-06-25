@@ -9,6 +9,41 @@
     <title>Aligent Assignment</title>
 </head>
 <body>
-    
+    <div class="header">
+        <div class="search">
+            <h2>SEARCH</h2>
+            <form id="form">
+                <input type="search" id="searchField" name="query" placeholder="Search...">
+                <button>Go!</button>
+            </form>
+            <div class="dateSlider">
+                <h2>YEAR</h2>
+                <input type="range" min="1900" max="2030" value="5" class="slider" id="dateSlider">
+              </div>
+            <div>
+                <h2>TYPE</h2>
+                <input type="radio" id="any" name="contentType" value="any">
+                <label for="any">Any</label>
+                <br>
+                <input type="radio" id="movies" name="contentType" value="movie">
+                <label for="movie">Movies</label>
+                <br>
+                <input type="radio" id="series" name="contentType" value="series">
+                <label for="series">Series</label>
+                <br>
+                <input type="radio" id="episodes" name="contentType" value="episodes">
+                <label for="episodes">Episodes</label>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <h2>BODY</h2>
+    </div>
+
+
+
+<!-- http://www.omdbapi.com/?apikey=9ed4deda&t=titanic -->
+ 
 </body>
 </html>
