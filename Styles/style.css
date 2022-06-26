@@ -1,0 +1,47 @@
+.header{
+    color: white;
+    background-color: blue;
+
+    padding: 10px;
+ 
+    display: flex;
+    justify-content: space-between;
+
+    background-color: grey;
+
+}
+
+.searchBar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.searchTitle{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dateSlider{
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.yearTitle{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.contentTypeButtons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.typeTitle{
+    padding-left: 10px;
+    padding-right: 10px;
+}

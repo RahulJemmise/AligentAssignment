@@ -10,31 +10,31 @@
 </head>
 <body>
     <div class="header">
-        <div class="search">
-            <h2>SEARCH</h2>
+        <div class="searchBar">
+            <h3 class="searchTitle">SEARCH</h3>
             <form id="form">
                 <input type="search" id="searchField" name="query" placeholder="Search...">
                 <button>Go!</button>
             </form>
-            <div class="dateSlider">
-                <h2>YEAR</h2>
-                <input type="range" min="1900" max="2030" value="5" class="slider" id="dateSlider">
-              </div>
-            <div>
-                <h2>TYPE</h2>
-                <input type="radio" id="any" name="contentType" value="any">
-                <label for="any">Any</label>
-                <br>
-                <input type="radio" id="movies" name="contentType" value="movie">
-                <label for="movie">Movies</label>
-                <br>
-                <input type="radio" id="series" name="contentType" value="series">
-                <label for="series">Series</label>
-                <br>
-                <input type="radio" id="episodes" name="contentType" value="episodes">
-                <label for="episodes">Episodes</label>
-                <br>
-            </div>
+        </div>
+        <div class="dateSlider">
+            <h3 class="yearTitle">YEAR</h3>
+            <input type="range" min="1900" max="2030" value="5" class="slider" id="dateSlider">
+        </div>
+        <div class="contentTypeButtons">
+            <h3 class="typeTitle">TYPE</h3>
+            <input type="radio" id="any" name="contentType" value="any">
+            <label for="any">Any</label>
+            <br>
+            <input type="radio" id="movies" name="contentType" value="movie">
+            <label for="movie">Movies</label>
+            <br>
+            <input type="radio" id="series" name="contentType" value="series">
+            <label for="series">Series</label>
+            <br>
+            <input type="radio" id="episodes" name="contentType" value="episodes">
+            <label for="episodes">Episodes</label>
+            <br>
         </div>
     </div>
     <div class="body">
