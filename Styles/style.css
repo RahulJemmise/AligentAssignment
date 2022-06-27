@@ -1,13 +1,15 @@
+
+
+/* Header Elements Styling*/
 .header{
     color: white;
-    background-color: blue;
 
     padding: 10px;
  
     display: flex;
     justify-content: space-between;
 
-    background-color: grey;
+    background-color: rgba(0, 0, 0, 0.804);
 
 }
 
@@ -44,4 +46,111 @@
 .typeTitle{
     padding-left: 10px;
     padding-right: 10px;
+}
+/* End eader Elements */
+
+/* Movie Info, Right Block Styling */
+.movieInfoBlock{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+
+    background-color: darkgreen;
+}
+
+.movieInfoRightBlock{
+    padding-top: 10px;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    background-color: red;    
+}
+
+.posterAndTitleInfo{
+    display: flex;
+    flex-direction: row;
+}
+
+.titleAndCast{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    padding: 0px 20px 0px 20px;
+    background-color: blue;
+}
+.title{
+    display: flex;
+    align-items: center;
+    background-color: violet;
+}
+
+.cast{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: aqua;
+}
+
+.plot{
+    padding-top: 10px;
+    display: flex;
+    background-color: antiquewhite;
+    width: 800px;
+}
+
+.scores{
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    justify-content: space-around;
+    background-color:rgb(108, 108, 149);
+}
+.scores .rottenTomatoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.scores .internetMovieDatabase{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.scores .metacritic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* END Movie Info Right Block*/
+
+
+/* Movie List, Left Block */
+.movieListLeftBlock{
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+}
+.search-list{
+    max-height: 500px;
+    overflow-y: scroll;
+    z-index: 10;
+    background-color: aliceblue;
+}
+.search-list .search-list-item{
+    background-color: cadetblue;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--dark-color);
+    width: calc(350px - 8px);
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: background-color 200ms ease;
+    -o-transition: background-color 200ms ease;
+    transition: background-color 200ms ease;
 }
