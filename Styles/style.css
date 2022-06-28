@@ -1,5 +1,4 @@
 
-
 /* Header Elements Styling*/
 .header{
     color: white;
@@ -47,9 +46,8 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-/* End eader Elements */
 
-/* Movie Info, Right Block Styling */
+/* Movie Info Overall Block */
 .movieInfoBlock{
     display: flex;
     flex-direction: row; 
@@ -58,6 +56,7 @@
     background-color: darkgreen;
 }
 
+/* Movie Info, Right Block Styling */
 .movieInfoRightBlock{
     padding-top: 10px;
     display: flex;
@@ -128,29 +127,9 @@
     align-items: center;
 }
 
-/* END Movie Info Right Block*/
-
-
-/* Movie List, Left Block */
+/* Movie List, Left Block Styling */
 .movieListLeftBlock{
     background-color: brown;
     display: flex;
     flex-direction: column;
-}
-.search-list{
-    max-height: 500px;
-    overflow-y: scroll;
-    z-index: 10;
-    background-color: aliceblue;
-}
-.search-list .search-list-item{
-    background-color: cadetblue;
-    padding: 0.5rem;
-    border-bottom: 1px solid var(--dark-color);
-    width: calc(350px - 8px);
-    color: #fff;
-    cursor: pointer;
-    -webkit-transition: background-color 200ms ease;
-    -o-transition: background-color 200ms ease;
-    transition: background-color 200ms ease;
 }

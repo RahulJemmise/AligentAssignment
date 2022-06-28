@@ -13,9 +13,9 @@
     <div class="header">
         <div class="searchBar">
             <h3 class="searchTitle">SEARCH</h3>
-            <form id="form">
-                <input type="search" id="searchField" name="query" placeholder="Search...">
-                <button>Go!</button>
+            <form id="search">
+                <input type = "text" class = "searchField" placeholder="Search Movie Title ..." 
+                id = "searchField" onkeyup="searchTitle()">
             </form>
         </div>
         <div class="dateSlider">
@@ -44,19 +44,11 @@
     <div class="movieInfoBlock">
         <!-- Movie Results Block LEFT side -->
         <div class="movieListLeftBlock">
-            <p>500 Results</p>
-            <div class = "search-list" id = "search-list">
-                <!-- list here -->
-               <div class = "search-list-item">
-                    <div class = "search-item-thumbnail">
-                        <!-- <img src="" alt=""> -->
-                    </div>
-                    <div class = "search-item-info">
-                        <h3>Titanic</h3>
-                        <p>1997</p>
-                    </div>
-                    
-                </div>
+            <div id="resultsCount">
+            <p>Results</p>
+            </div>
+            <div class = "searchList" id = "searchList">
+                <!-- Search List Goes Here -->
             </div>
         </div>
 
@@ -96,7 +88,6 @@
             </div>
         </div>  
     </div>   
-    <!-- http://www.omdbapi.com/?apikey=9ed4deda&t=titanic -->
- 
+    <script src="Javascript/javascript.js"></script> 
 </body>
 </html>
