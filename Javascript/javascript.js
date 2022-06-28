@@ -31,6 +31,7 @@ async function loadFromAPI(titleName){
 
 /* This function displays found titles in different divs with respective title and year*/
 function displayTitles(titles){
+    searchList.innerHTML = "";
 
     /*Sets the number of results found*/
     resultsCount.innerHTML = + titles.length + " results";
