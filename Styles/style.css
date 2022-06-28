@@ -52,8 +52,7 @@
     display: flex;
     flex-direction: row; 
     justify-content: space-around;
-
-    background-color: darkgreen;
+    background-color: rgba(0, 0, 0, 0.804);
 }
 
 /* Movie Info, Right Block Styling */
@@ -129,7 +128,37 @@
 
 /* Movie List, Left Block Styling */
 .movieListLeftBlock{
-    background-color: brown;
     display: flex;
     flex-direction: column;
+}
+
+#resultsCount{
+    color: white;
+}
+
+.searchList{
+    max-height: 564px;
+    width: 400px;
+    overflow-y: scroll;
+    z-index: 10;
+}
+
+.searchListItem{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.804);
+    color: white;
+    padding: 5px;
+    border-bottom: white;
+    border-style: solid;
+    cursor: pointer;
+
+}
+
+.search-item-thumbnail img{
+    width: 150px;
+    height: 200px;
+}
+
+.search-item-info{
+    padding-left: 20px;
 }
