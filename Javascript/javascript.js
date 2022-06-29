@@ -98,3 +98,21 @@ async function loadTitleDetail(){
         displayMovieDetails(movieDetails);
     });}}
 }
+
+function displayMovieDetails(details){
+    var poster = document.getElementById("poster");
+
+    /*Set poster source to be the one specified by API*/
+    poster.src = details.Poster;
+
+    /*Set all elements to display title information according to API*/
+    document.getElementById("movieTitle").innerHTML = details.Title;
+
+    document.getElementById("cast").innerHTML = details.Actors;
+
+    document.getElementById("plot").innerHTML = "<b>Plot Summary: </b>" + details.Plot;
+
+    document.getElementById("internetMovieDatabaseScore").innerHTML = details.Ratings[0].Value;
+    document.getElementById("rottenTomatoesScore").innerHTML = details.Ratings[1].Value;
+    document.getElementById("metacriticScore").innerHTML = details.Ratings[2].Value;
+}
