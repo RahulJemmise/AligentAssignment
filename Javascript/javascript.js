@@ -1,13 +1,20 @@
 /*This function uses search bar for user input, 
 then puts this input into the loadFromAPI function to search for the specified title.*/
+var resultView = document.getElementById("resultsCount");
+resultView.style.display = "none";
+var searchListView = document.getElementById("searchList");
+searchListView.style.display = "none";
+
 function searchTitle(){
     let searchText = (searchFields.value).trim();
     /*If no search has been made the movie list will be hidden, else it will show titles found*/
     if(searchText.length > 0){
-        searchList.classList.remove('hide-search-list');
+        resultView.style.display = "initial";
+        searchListView.style.display = "initial";
         loadFromAPI(searchText);
     } else {
-        searchList.classList.add('hide-search-list');
+        resultView.style.display = "none";
+        searchListView.style.display = "none";
     }
 }
 
@@ -40,6 +47,7 @@ function displayTitles(titles){
     for(let i = 0; i < titles.length; i++){
         let movieListItem = document.createElement('div');
 
+
         movieListItem.classList.add('searchListItem');
 
         /*Set poster to be the one specified in API*/
@@ -48,6 +56,9 @@ function displayTitles(titles){
         /*Sets title info*/
         movieListItem.innerHTML = 
         `
+        <div class = "IMBDid">
+        <p style="visibility: hidden" id="IMBDid">${titles[i].imdbID}</p>
+        </div>
         <div class = "search-item-thumbnail">
             <img src = "${poster}">
         </div>
@@ -59,4 +70,31 @@ function displayTitles(titles){
         /* Adding the new div[i] to the searchList class*/
         searchList.appendChild(movieListItem);
     }
+    loadTitleDetail();
+}
+
+async function loadTitleDetail(){
+    var finalIMBDidNo;
+    /*titleSearchResults will be the variable to hold all the divs of results*/
+    const titleSearchResults = searchList.querySelectorAll('.searchListItem');
+    
+    /*Loop uses the API to load results for the particular title when it's div is clicked
+    by using its IMBD id*/
+    for(var j = 0; j<titleSearchResults.length; j++){
+    // console.log(titleSearchResults[j]);
+        try{throw j}
+        catch(jj){
+        titleSearchResults[j].addEventListener("click", async function onClick() {
+        // console.log(jj)
+    
+        var IMBDidNo = document.getElementsByClassName("IMBDid");
+        finalIMBDidNo = IMBDidNo[jj].textContent.trim();
+        // console.log(finalIMBDidNo);
+
+        /*Uses IMBD id to fetch the titles details */
+        const result = await fetch(`http://www.omdbapi.com/?i=${finalIMBDidNo}&apikey=9ed4deda`);
+        const movieDetails = await result.json();
+        // console.log(movieDetails);
+        displayMovieDetails(movieDetails);
+    });}}
 }
