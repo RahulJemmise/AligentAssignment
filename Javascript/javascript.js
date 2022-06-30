@@ -4,6 +4,8 @@ var resultView = document.getElementById("resultsCount");
 resultView.style.display = "none";
 var searchListView = document.getElementById("searchList");
 searchListView.style.display = "none";
+var leftBlockview = document.getElementById("movieInfoBlock")
+// leftBlockview.style.display = "none";
 
 function searchTitle(){
     let searchText = (searchFields.value).trim();
@@ -11,6 +13,7 @@ function searchTitle(){
     if(searchText.length > 0){
         resultView.style.display = "initial";
         searchListView.style.display = "initial";
+        // leftBlockview.style.display = "initial"
         loadFromAPI(searchText);
     } else {
         resultView.style.display = "none";
@@ -100,19 +103,55 @@ async function loadTitleDetail(){
 }
 
 function displayMovieDetails(details){
-    var poster = document.getElementById("poster");
 
-    /*Set poster source to be the one specified by API*/
-    poster.src = details.Poster;
 
-    /*Set all elements to display title information according to API*/
-    document.getElementById("movieTitle").innerHTML = details.Title;
+    // var poster = document.getElementById("poster");
 
-    document.getElementById("cast").innerHTML = details.Actors;
+    // /*Set poster source to be the one specified by API*/
+    // poster.src = details.Poster;
 
-    document.getElementById("plot").innerHTML = "<b>Plot Summary: </b>" + details.Plot;
+    // /*Set all elements to display title information according to API*/
+    // document.getElementById("movieTitle").innerHTML = details.Title;
 
-    document.getElementById("internetMovieDatabaseScore").innerHTML = details.Ratings[0].Value;
-    document.getElementById("rottenTomatoesScore").innerHTML = details.Ratings[1].Value;
-    document.getElementById("metacriticScore").innerHTML = details.Ratings[2].Value;
+    // document.getElementById("cast").innerHTML = details.Actors;
+
+    // document.getElementById("plot").innerHTML = "<b>Plot Summary: </b>" + details.Plot;
+
+    // document.getElementById("internetMovieDatabaseScore").innerHTML = details.Ratings[0].Value;
+    // document.getElementById("rottenTomatoesScore").innerHTML = details.Ratings[1].Value;
+    // document.getElementById("metacriticScore").innerHTML = details.Ratings[2].Value;
+    movieInfoRightBlock.innerHTML =
+    `
+        <div class="posterAndTitleInfo">
+            <div class="poster">
+                <img id="poster" src="${details.Poster}"  width="200" height="300">
+            </div>
+            <div class="titleAndCast">
+                <div class="movieTitle">
+                    <h2 id="movieTitle">${details.Title}</h2>
+                </div>
+                <div class="cast">
+                <h3 id="cast">${details.Actors}</h3>
+                </div>
+            </div>
+        </div> 
+        <div class="plot">
+        <p id="plot">${details.Plot}</p>
+    </div>
+    <div class="scores">
+        <div class="internetMovieDatabase">
+            <h3 id="internetMovieDatabaseScore">${details.Ratings[0].Value}</h3>
+            <h5>Internet Movie Database</h5>
+        </div>
+        <div class="rottenTomatoes">
+            <h3 id="rottenTomatoesScore">${details.Ratings[1].Value}</h3>
+            <h5>Rotten Tomatoes</h5>
+        </div>
+        <div class="metacritic">
+            <h3 id="metacriticScore">${details.Ratings[2].Value}</h3>
+            <h5>Metacritic</h5>
+        </div>
+    </div>   
+    `
+    ;
 }

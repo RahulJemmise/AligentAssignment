@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
 
-    background-color: rgba(0, 0, 0, 0.804);
+    background-color: rgba(0, 0, 0, 0.932);
 
 }
 
@@ -52,18 +52,23 @@
     display: flex;
     flex-direction: row; 
     justify-content: space-around;
+    width: 1247.33px;
+    height: 520px;
     background-color: rgba(0, 0, 0, 0.804);
 }
 
 /* Movie Info, Right Block Styling */
 .movieInfoRightBlock{
     padding-top: 10px;
+    margin: none;
     display: flex;
+
 
     flex-direction: column;
     align-items: center;
 
-    background-color: red;    
+    color: white;
+    /* border-style: solid; */
 }
 
 .posterAndTitleInfo{
@@ -75,28 +80,25 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     
     padding: 0px 20px 0px 20px;
-    background-color: blue;
 }
 .movieTitle{
     display: flex;
     align-items: center;
-    background-color: violet;
 }
 
 .cast{
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    background-color: aqua;
 }
 
 .plot{
-    padding-top: 10px;
+    padding: 10px;
+    margin: 5px;
     display: flex;
-    background-color: antiquewhite;
     width: 800px;
 }
 
@@ -106,7 +108,7 @@
     width: 800px;
     height: 100px;
     justify-content: space-around;
-    background-color:rgb(108, 108, 149);
+    margin: none;
 }
 .scores .rottenTomatoes{
     display: flex;
@@ -114,21 +116,35 @@
     justify-content: center;
     align-items: center;
 }
+#rottenTomatoesScore{
+    margin: 0;
+}
+
+
+
 .scores .internetMovieDatabase{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+#internetMovieDatabaseScore{
+    margin: 0;
+}
+
 .scores .metacritic{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+#metacriticScore{
+    margin: 0;
+}
 
 /* Movie List, Left Block Styling */
 .movieListLeftBlock{
+
     display: flex;
     flex-direction: column;
 }
