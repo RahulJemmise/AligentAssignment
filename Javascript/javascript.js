@@ -43,25 +43,26 @@ const searchFields = document.getElementById('searchField');
 
 async function loadFromAPI(titleName){
 
+    /*Switch cases alters the URL being used to filter for specific type of content*/
     switch (type) {
         case 0: {
             var URL = `https://omdbapi.com/?s=${titleName}&apikey=9ed4deda`;
-            console.log("any")
+            // console.log("any")
         } 
         break;
         case 1: {
             var URL = `https://omdbapi.com/?s=${titleName}&type=movie&apikey=9ed4deda`
-            console.log("movie")
+            // console.log("movie")
         } 
         break;
         case 2: {
             var URL = `https://omdbapi.com/?s=${titleName}&type=series&apikey=9ed4deda`
-            console.log("series")
+            // console.log("series")
         } 
         break;
         case 3: {
             var URL = `https://omdbapi.com/?s=${titleName}&type=episode&apikey=9ed4deda`
-            console.log("episode")
+            // console.log("episode")
         } 
         break;
     }
@@ -153,7 +154,7 @@ function displayMovieDetails(details){
                 <div class="movieTitle">
                     <h1 id="movieTitle">${details.Title}</h1>
                 </div>
-                <ul class = "movie-misc-info">
+                <ul class = "movieSubInfo">
                     <li class = "rated">${details.Rated}</li>
                     <br>
                     <li class = "year">${details.Year}</li>

@@ -2,14 +2,10 @@
 /* Header Elements Styling*/
 .header{
     color: white;
-
     padding: 10px;
- 
     display: flex;
     justify-content: space-between;
-
     background-color: rgba(0, 0, 0, 0.932);
-
 }
 
 .searchBar{
@@ -19,6 +15,7 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
 .searchTitle{
     padding-left: 10px;
     padding-right: 10px;
@@ -30,6 +27,7 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
 .yearTitle{
     padding-left: 10px;
     padding-right: 10px;
@@ -42,6 +40,7 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
 .typeTitle{
     padding-left: 10px;
     padding-right: 10px;
@@ -55,9 +54,9 @@
     color: whitesmoke;
 
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
     color: whitesmoke;
-    opacity: 1; /* Firefox */
+    opacity: 1;
   }
 
 /* Movie Info Overall Block */
@@ -70,23 +69,14 @@
     background-color: rgba(0, 0, 0, 0.804);
 }
 
-.backgroundText{
-    display: flex;
-    justify-content: center;
-}
-
 /* Movie Info, Right Block Styling */
 .movieInfoRightBlock{
     padding-top: 10px;
     margin: none;
     display: flex;
-
-
     flex-direction: column;
     align-items: center;
-
     color: white;
-    /* border-style: solid; */
 }
 
 .posterAndTitleInfo{
@@ -99,7 +89,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    
     padding: 0px 20px 0px 20px;
 }
 .movieTitle{
@@ -111,8 +100,8 @@
     margin: 0;
 }
 
-/* Movie misc info */
-.movie-misc-info{
+/* Movie Sub (rating, year, genre) */
+.movieSubInfo{
     list-style-type: none;
     display:flex;
     align-items: center;
@@ -120,19 +109,18 @@
     padding: 0;
     margin: 0%;
 }
-.movie-misc-info .rated{
+.movieSubInfo .rated{
     padding: 10px;
 }
-.movie-misc-info .year{
+.movieSubInfo .year{
     padding: 10px;
 }
-.movie-misc-info .genre{
+.movieSubInfo .genre{
     padding: 10px;
 }
-.movie-misc-info .runtime{
+.movieSubInfo .runtime{
     padding: 10px;
 }
-
 
 .cast{
     display: flex;
@@ -143,7 +131,6 @@
     margin: 0%;
 }
 
-
 .plot{
     padding: 10px;
     margin: 5px;
@@ -151,6 +138,7 @@
     width: 800px;
 }
 
+/* Scores */
 .scores{
     display: flex;
     flex-direction: row;
@@ -159,6 +147,7 @@
     justify-content: space-around;
     margin: none;
 }
+
 .scores .rottenTomatoes{
     display: flex;
     flex-direction: column;
@@ -168,8 +157,6 @@
 #rottenTomatoesScore{
     margin: 0;
 }
-
-
 
 .scores .internetMovieDatabase{
     display: flex;
@@ -193,7 +180,6 @@
 
 /* Movie List, Left Block Styling */
 .movieListLeftBlock{
-
     display: flex;
     flex-direction: column;
 }
