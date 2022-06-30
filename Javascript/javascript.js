@@ -7,10 +7,24 @@ searchListView.style.display = "none";
 var leftBlockview = document.getElementById("movieInfoBlock")
 // leftBlockview.style.display = "none";
 var rightBlockView = document.getElementById("movieInfoRightBlock")
+var type = 0;
+
+function radioCheck(){
+    if(document.getElementById('any').checked) {
+        type = 0;
+    }else if(document.getElementById('movies').checked) {
+        type = 1;
+    }else if(document.getElementById('series').checked) {
+        type = 2;
+    }else if(document.getElementById('episodes').checked){
+        type = 3;
+    }
+}
 
 function searchTitle(){
     let searchText = (searchFields.value).trim();
     /*If no search has been made the movie list will be hidden, else it will show titles found*/
+
     if(searchText.length > 0){
         resultView.style.display = "initial";
         searchListView.style.display = "initial";
@@ -28,7 +42,30 @@ function searchTitle(){
 const searchFields = document.getElementById('searchField');
 
 async function loadFromAPI(titleName){
-    const URL = `https://omdbapi.com/?s=${titleName}&apikey=9ed4deda`;
+
+    switch (type) {
+        case 0: {
+            var URL = `https://omdbapi.com/?s=${titleName}&apikey=9ed4deda`;
+            console.log("any")
+        } 
+        break;
+        case 1: {
+            var URL = `https://omdbapi.com/?s=${titleName}&type=movie&apikey=9ed4deda`
+            console.log("movie")
+        } 
+        break;
+        case 2: {
+            var URL = `https://omdbapi.com/?s=${titleName}&type=series&apikey=9ed4deda`
+            console.log("series")
+        } 
+        break;
+        case 3: {
+            var URL = `https://omdbapi.com/?s=${titleName}&type=episode&apikey=9ed4deda`
+            console.log("episode")
+        } 
+        break;
+    }
+    
     const result = await fetch(`${URL}`);
     const searchData = await result.json();
     /*If results for the search title is found call the display function with 
@@ -106,23 +143,6 @@ async function loadTitleDetail(){
 }
 
 function displayMovieDetails(details){
-
-
-    // var poster = document.getElementById("poster");
-
-    // /*Set poster source to be the one specified by API*/
-    // poster.src = details.Poster;
-
-    // /*Set all elements to display title information according to API*/
-    // document.getElementById("movieTitle").innerHTML = details.Title;
-
-    // document.getElementById("cast").innerHTML = details.Actors;
-
-    // document.getElementById("plot").innerHTML = "<b>Plot Summary: </b>" + details.Plot;
-
-    // document.getElementById("internetMovieDatabaseScore").innerHTML = details.Ratings[0].Value;
-    // document.getElementById("rottenTomatoesScore").innerHTML = details.Ratings[1].Value;
-    // document.getElementById("metacriticScore").innerHTML = details.Ratings[2].Value;
     movieInfoRightBlock.innerHTML =
     `
         <div class="posterAndTitleInfo">
@@ -131,8 +151,17 @@ function displayMovieDetails(details){
             </div>
             <div class="titleAndCast">
                 <div class="movieTitle">
-                    <h2 id="movieTitle">${details.Title}</h2>
+                    <h1 id="movieTitle">${details.Title}</h1>
                 </div>
+                <ul class = "movie-misc-info">
+                    <li class = "rated">${details.Rated}</li>
+                    <br>
+                    <li class = "year">${details.Year}</li>
+                    <br>
+                    <li class = "genre">${details.Genre}</li>
+                    <br>
+                    <li class = "runtime">${details.Runtime}</li>
+                </ul>
                 <div class="cast">
                 <h3 id="cast">${details.Actors}</h3>
                 </div>

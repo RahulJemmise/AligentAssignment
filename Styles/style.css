@@ -47,6 +47,19 @@
     padding-right: 10px;
 }
 
+.searchField{
+    padding: 10px;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0);
+    border-style:groove;
+    color: whitesmoke;
+
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: whitesmoke;
+    opacity: 1; /* Firefox */
+  }
+
 /* Movie Info Overall Block */
 .movieInfoBlock{
     display: flex;
@@ -55,6 +68,11 @@
     width: 1247.33px;
     height: 520px;
     background-color: rgba(0, 0, 0, 0.804);
+}
+
+.backgroundText{
+    display: flex;
+    justify-content: center;
 }
 
 /* Movie Info, Right Block Styling */
@@ -89,11 +107,42 @@
     align-items: center;
 }
 
+#movieTitle{
+    margin: 0;
+}
+
+/* Movie misc info */
+.movie-misc-info{
+    list-style-type: none;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0%;
+}
+.movie-misc-info .rated{
+    padding: 10px;
+}
+.movie-misc-info .year{
+    padding: 10px;
+}
+.movie-misc-info .genre{
+    padding: 10px;
+}
+.movie-misc-info .runtime{
+    padding: 10px;
+}
+
+
 .cast{
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
 }
+#cast{
+    margin: 0%;
+}
+
 
 .plot{
     padding: 10px;

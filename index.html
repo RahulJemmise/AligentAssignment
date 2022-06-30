@@ -15,14 +15,14 @@
             <h3 class="searchTitle">SEARCH</h3>
             <form id="search">
                 <input type = "text" class = "searchField" placeholder="Search Movie Title ..." 
-                id = "searchField" onkeyup="searchTitle()">
+                id = "searchField" onkeyup="searchTitle();radioCheck()">
             </form>
         </div>
         <div class="dateSlider">
             <h3 class="yearTitle">YEAR</h3>
             <input type="range" min="1900" max="2030" value="5" class="slider" id="dateSlider">
         </div>
-        <div class="contentTypeButtons">
+        <div class="contentTypeButtons" onclick="radioCheck();searchTitle()">
             <h3 class="typeTitle">TYPE</h3>
             <input type="radio" id="any" name="contentType" value="any">
             <label for="any">Any</label>
@@ -42,13 +42,14 @@
     
     <!-- Movie Results Block-->
     <div class="movieInfoBlock" id="movieInfoBlock">
+
         <!-- Movie Results Block LEFT side -->
         <div class="movieListLeftBlock">
             <div id="resultsCount" class="resultsCount">
             <p>Results</p>
             </div>
             <div class = "searchList" id = "searchList">
-                <!-- Search List Goes Here -->
+                <!-- Search List innerHTML Goes Here -->
             </div>
         </div>
 
