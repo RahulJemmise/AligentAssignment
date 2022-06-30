@@ -6,6 +6,7 @@ var searchListView = document.getElementById("searchList");
 searchListView.style.display = "none";
 var leftBlockview = document.getElementById("movieInfoBlock")
 // leftBlockview.style.display = "none";
+var rightBlockView = document.getElementById("movieInfoRightBlock")
 
 function searchTitle(){
     let searchText = (searchFields.value).trim();
@@ -14,10 +15,12 @@ function searchTitle(){
         resultView.style.display = "initial";
         searchListView.style.display = "initial";
         // leftBlockview.style.display = "initial"
+        rightBlockView.style.display = "flex"
         loadFromAPI(searchText);
     } else {
         resultView.style.display = "none";
         searchListView.style.display = "none";
+        rightBlockView.style.display = "none";
     }
 }
 
